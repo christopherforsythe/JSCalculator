@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js lab</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="stylesheet/ui.css">
+
+    <script>
+        function calculate(){
+            myNum1 = document.getElementById("inputNum1").value;
+            myNum1 = parseInt(myNum1);
+
+            myNum2 = document.getElementById("inputNum2").value;
+            myNum2 = parseInt(myNum2);
+
+            var dropd = document.getElementById("symbol");
+            var symb = dropd.options[dropd.selectedIndex].text;
+
+            var mult = 'x';
+            var div = '/';
+            var add = '+';
+            var sub = '-';
+            var eq = "=";
+
+            if(symb == "Add"){
+                myResult = myNum1 + myNum2;
+                document.getElementById('output').innerHTML = myNum1 +" " + add +" " + myNum2+ " " + eq + " " + myResult; 
+
+            } else{
+
+                if(symb == "Subtract"){
+                    myResult = myNum1 - myNum2;
+                    document.getElementById('output').innerHTML = myNum1 +" " + sub +" " + myNum2+ " " + eq + " " + myResult; 
+
+                } else{
+                    if(symb == "Multiply"){
+                        myResult = myNum1 * myNum2;
+                        document.getElementById('output').innerHTML = myNum1 +" " + mult +" " + myNum2+ " " + eq + " " + myResult; 
+
+                    } else{
+                        if(symb == "Divide"){
+                            myResult = myNum1 / myNum2;
+                            document.getElementById('output').innerHTML = myNum1 +" " + div +" " + myNum2+ " " + eq + " " + myResult; 
+
+                        }
+                    }
+                }
+            }
+
+       // document.getElementById('output').innerHTML = myResult;
+            //console.log("Number 1: " +myNum1 + " Number 2: " +myNum2);
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar backg" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!--navbar items-->
+            <img src="https://image.flaticon.com/icons/svg/2531/2531123.svg"width="50"alt="js">
+            <a href="" class="navbar-item">
+                Home
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-quarter">
+                first number:
+            </div>
+            <div class="column">
+                <input type="text" class="input is-rounded" id="inputNum1">
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-one-quarter">
+                second number:
+            </div>
+            <div class="column">
+                <input type="text" class="input is-rounded" id="inputNum2">
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h4 class="title">Results</h4>
+                <div id="output">Empty</div>
+            </div>
+
+            <div class="column">
+                <div class="button" onclick="calculate()">Calculate</div>
+
+                <div class="select">
+                    <select id="symbol">
+                        <option value="">Add</option>
+                        <option value="">Subtract</option>
+                        <option value="">Multiply</option>
+                        <option value="">Divide</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>JavaScript lab</strong>
+                <br>
+                <strong>Maths init</strong>
+            </p>
+        </div>  
+    </footer>
+    
+</body>
+</html>
